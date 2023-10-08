@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Temperature Calculator </title>
+        <style>
+            .title{
+                margin-bottom:10px;
+                text-align:center;
+                width: 210px;
+                color:blue;
+                border:solid red 2px;
+            }
+            input[type="button"]{
+                background-color: yellowgreen;
+                color: white;
+                border:solid red 2px;
+                width:100px;
+            }
+            input[type="text"]{
+                background-color: white;
+                border: solid red 2px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="title">
+            Calculator Celcius to Farhient and Kelvin
+        </div>
+        <table border="0px">
+            <tr>
+            <td colspan="3"><input type="text" placeholder="enter temp in celcius" id="txt_box"></td>
+            <td> <input type = "button" value ="Clear" onclick = "clr()"></td>
+            </tr>
+            <tr>
+                <td> <input type = "button" value ="1" onclick = "display('1')"></td>
+                <td> <input type = "button" value ="2" onclick = "display('2')"></td>
+                <td> <input type = "button" value ="3" onclick = "display('3')"></td>
+                <td> <input type = "button" value ="0" onclick = "display('0')"></td>
+            </tr>
+            <tr>
+                <td> <input type = "button" value ="4" onclick = "display('4')"></td>
+                <td> <input type = "button" value ="5" onclick = "display('5')"></td>
+                <td> <input type = "button" value ="6" onclick = "display('6')"></td>
+                <td> <input type = "button" value ="Kelvin" onclick="kev()"></td>
+            </tr>
+            <tr>
+                <td> <input type = "button" value ="7" onclick = "display('7')"></td>
+                <td> <input type = "button" value ="8" onclick = "display('8')"></td>
+                <td> <input type = "button" value ="9" onclick = "display('9')"></td>
+                <td> <input type = "button" value ="Farhient" onclick="far()"></td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            function clr(){
+                document.getElementById("txt_box").value="";
+            }
+            function display(val){
+                document.getElementById("txt_box").value+=val;
+            }
+            function far(){
+                let x = document.getElementById("txt_box").value;
+                let y = (9/5)*x+32;
+                document.getElementById("txt_box").value=y;
+            }
+            function kev(){
+                let a = document.getElementById("txt_box").value;
+                let b = 273.15+eval(a);
+                document.getElementById("txt_box").value=b;
+            }
+        </script>
+    </body>
+</html>
